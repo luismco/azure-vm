@@ -38,5 +38,5 @@ jobs:
           echo "${{ secrets.CHAVE }}" > key.pem
           chmod 600 key.pem
           ssh -o StrictHostKeyChecking=no azureuser@4.178.144.168 -i key.pem "sudo tar -cfv /home/azureuser/website.tar /var/www/html"
-          scp -o StrictHostKeyChecking=no -i key.pem azureuser@4.178.144.168:website.tar ./website.tar
+          scp -o StrictHostKeyChecking=no -i key.pem azureuser@4.178.144.168:/home/azureuser/website.tar ./website.tar
           ls -l
