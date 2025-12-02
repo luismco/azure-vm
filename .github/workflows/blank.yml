@@ -37,6 +37,6 @@ jobs:
           echo test, and deploy your project.
           echo "${{ secrets.CHAVE }}" > key.pem
           chmod 600 key.pem
-          ssh -o StrictHostKeyChecking=no ./index.html azureuser@4.178.144.168 -i key.pem "sudo apt install -y apache2"
+          ssh -o StrictHostKeyChecking=no azureuser@4.178.144.168 -i key.pem "sudo apt install -y apache2"
           scp -o StrictHostKeyChecking=no -i key.pem ./index.html azureuser@4.178.144.168:/var/www/html/index.html
           
